@@ -17,27 +17,49 @@
 | Platform | Get AirLynk |
 |---|---|
 | **Android** | [Google Play](https://play.google.com/store/apps/details?id=com.airlynk.app) |
-| **Windows 10 and 11** (64-bit) | [Installer (EXE)](https://github.com/aluvalasathish/airlynk-releases/releases/latest) · Microsoft Store: coming soon · winget: coming soon |
+| **Windows 10 and 11** (64-bit) | [Microsoft Store](https://apps.microsoft.com/detail/9NHVZ89SQHJG) · `winget install airlynk` · [Installer (EXE)](https://github.com/aluvalasathish/airlynk-releases/releases/latest) |
 | **macOS** | Coming soon |
 | **Linux** | Coming soon |
 | **iPhone and iPad** | Coming soon |
 
 ## Install on Windows
 
+Three ways to get the same app. **Needs** Windows 10 version 1809 or later, 64-bit; Windows 11 on Arm runs it through emulation.
+
+### Microsoft Store
+
+[Get AirLynk from the Microsoft Store](https://apps.microsoft.com/detail/9NHVZ89SQHJG) and click **Get** or **Install**. There's no admin prompt or download warning, and the Store keeps AirLynk updated.
+
+### winget
+
+In Terminal, Command Prompt or PowerShell:
+
+```
+winget install airlynk
+```
+
+This installs the Microsoft Store version.
+
+### Installer (EXE)
+
+For PCs without the Microsoft Store:
+
 1. Open the [latest release](https://github.com/aluvalasathish/airlynk-releases/releases/latest) and download `AirLynk-<version>-Setup.exe` under **Assets**. The `latest.json` file next to it is for the app's updates; you don't need it.
-2. Run it. Windows asks for permission, because AirLynk installs for everyone on the PC and adds a firewall rule so devices can connect to it directly.
+2. Run it. Windows asks for permission, because the installer sets up AirLynk for everyone on the PC and adds a firewall rule so devices can connect to it directly.
 3. If Windows shows **"Windows protected your PC"**, click **More info**, then **Run anyway**. The installer isn't code-signed yet. Every update AirLynk installs is checked against its own signature first (see [Updates](#updates)).
 
-**Needs** Windows 10 version 1809 or later, 64-bit. Windows 11 on Arm runs it through emulation.
+### After installing
 
-**After installing**
-- **Send with AirLynk** is in File Explorer's right-click menu. On Windows 11 it's under **Show more options**.
+- **Send with AirLynk** is in File Explorer's right-click menu. With the installer version on Windows 11, it's under **Show more options**.
 - AirLynk can keep running in the tray after you close the window, so your paired devices can still send to your PC. You can turn this off in Settings.
 - To uninstall: **Settings → Apps → Installed apps → AirLynk**.
 
 ### Updates
 
-AirLynk updates itself. It checks for a new version every 6 hours and shows a popup when one is ready, and an update never interrupts a transfer. Every update is signed, and AirLynk checks the signature before installing it.
+- **Microsoft Store and winget:** the Microsoft Store installs updates for you.
+- **Installer (EXE):** AirLynk updates itself. It checks for a new version every 6 hours and shows a popup when one is ready, and every update is signed and checked before it's installed.
+
+Either way, an update never interrupts a transfer.
 
 ## What AirLynk does
 
