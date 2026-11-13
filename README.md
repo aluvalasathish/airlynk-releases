@@ -19,7 +19,7 @@
 | **Android** | [Google Play](https://play.google.com/store/apps/details?id=com.airlynk.app) |
 | **Windows 10 and 11** (64-bit) | [Microsoft Store](https://apps.microsoft.com/detail/9NHVZ89SQHJG) · `winget install airlynk` · [Installer (EXE)](https://github.com/aluvalasathish/airlynk-releases/releases/latest) |
 | **macOS** | Coming soon |
-| **Linux** | Coming soon |
+| **Linux** (64-bit) | [.deb package](https://github.com/aluvalasathish/airlynk-releases/releases/latest) · [AppImage](https://github.com/aluvalasathish/airlynk-releases/releases/latest) |
 | **iPhone and iPad** | Coming soon |
 
 ## Install on Windows
@@ -61,6 +61,43 @@ For PCs without the Microsoft Store:
 
 Either way, an update never interrupts a transfer.
 
+## Install on Linux
+
+Two ways to get the same app. **Needs** a 64-bit PC with glibc 2.34 or later: Ubuntu 22.04 and later, Debian 12 and later, Fedora, and most others released since 2022.
+
+### .deb package
+
+For Ubuntu, Debian, Mint and other systems that use `apt`:
+
+1. Download `airlynk_<version>_amd64.deb` from the [latest release](https://github.com/aluvalasathish/airlynk-releases/releases/latest).
+2. Open it in your software installer, or from a terminal:
+   ```
+   sudo apt install ./airlynk_<version>_amd64.deb
+   ```
+3. AirLynk is in your app menu, and `airlynk` works from a terminal.
+
+### AppImage
+
+For any other Linux, or to try AirLynk with no install:
+
+1. Download `AirLynk-<version>-x86_64.AppImage` from the [latest release](https://github.com/aluvalasathish/airlynk-releases/releases/latest).
+2. Make it runnable and open it:
+   ```
+   chmod +x AirLynk-*.AppImage
+   ./AirLynk-*.AppImage
+   ```
+3. It adds itself to your app menu the first time it runs.
+
+### After installing
+
+- **Send with AirLynk** is in the right-click menu of GNOME Files, Nemo and Dolphin.
+- AirLynk can keep running in the background after you close the window, so your paired devices can still send to it. You can turn this off in Settings.
+- To uninstall the `.deb`: `sudo apt remove airlynk`. The AppImage just needs deleting.
+
+### Updates
+
+AirLynk updates itself. It checks for a new version every 6 hours and shows a popup when one is ready, and every update is signed and checked before it's installed. The `.deb` asks for your password to install the update; the AppImage replaces its own file. An update never interrupts a transfer.
+
 ## What AirLynk does
 
 - Send photos, videos, documents and whole folders, with no size limit
@@ -71,7 +108,7 @@ Either way, an update never interrupts a transfer.
 
 ## Privacy
 
-Read the [privacy policy](https://airlynk.in/privacy-policy). The Windows app has no ads and no analytics.
+Read the [privacy policy](https://airlynk.in/privacy-policy). The desktop app has no ads and no analytics.
 
 ## Help
 
@@ -81,6 +118,6 @@ Read the [privacy policy](https://airlynk.in/privacy-policy). The Windows app ha
 
 ## About this repository
 
-This repository holds AirLynk's release files: the Windows installer, and the signed update file (`latest.json`) the app reads to find new versions. The source code isn't public.
+This repository holds AirLynk's release files: the Windows installer, the Linux `.deb` and AppImage, and the signed update file (`latest.json`) the app reads to find new versions. The source code isn't public.
 
 © 2026 Sathish Aluvala
