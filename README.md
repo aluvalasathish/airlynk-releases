@@ -18,7 +18,7 @@
 |---|---|
 | **Android** | [Google Play](https://play.google.com/store/apps/details?id=com.airlynk.app) |
 | **Windows 10 and 11** (64-bit) | [Microsoft Store](https://apps.microsoft.com/detail/9NHVZ89SQHJG) · `winget install airlynk` · [Installer (EXE)](https://github.com/aluvalasathish/airlynk-releases/releases/latest) |
-| **macOS** | Coming soon |
+| **macOS 12 and later** | [Apple chip](https://github.com/aluvalasathish/airlynk-releases/releases/latest) · [Intel](https://github.com/aluvalasathish/airlynk-releases/releases/latest) · [Universal](https://github.com/aluvalasathish/airlynk-releases/releases/latest) (.dmg) |
 | **Linux** (64-bit) | [.deb package](https://github.com/aluvalasathish/airlynk-releases/releases/latest) · [AppImage](https://github.com/aluvalasathish/airlynk-releases/releases/latest) |
 | **iPhone and iPad** | Coming soon |
 
@@ -60,6 +60,35 @@ For PCs without the Microsoft Store:
 - **Installer (EXE):** AirLynk updates itself. It checks for a new version every 6 hours and shows a popup when one is ready, and every update is signed and checked before it's installed.
 
 Either way, an update never interrupts a transfer.
+
+## Install on macOS
+
+**Needs** macOS 12 Monterey or later. AirLynk is signed and notarized by Apple.
+
+### Which file
+
+There's one file for each kind of Mac, and one that works on both. To check yours, open the Apple menu → **About This Mac**:
+
+- **Chip** shows Apple M1, M2, M3 or later → `AirLynk-<version>-mac-apple-silicon.dmg`
+- **Processor** shows Intel → `AirLynk-<version>-mac-intel.dmg`
+- Not sure → `AirLynk-<version>-mac-universal.dmg`, about twice the size, works on either
+
+### Install
+
+1. Download your file from the [latest release](https://github.com/aluvalasathish/airlynk-releases/releases/latest).
+2. Open it and drag **AirLynk** onto **Applications**.
+3. Open AirLynk from Applications. The first time, macOS asks whether to open an app downloaded from the internet: click **Open**.
+4. macOS asks once to let AirLynk find devices on your local network. Click **Allow**, so your phone and other computers on the same Wi-Fi can find your Mac and send to it directly. If your Mac's firewall is on, also allow AirLynk to accept incoming connections.
+
+### After installing
+
+- **Send with AirLynk** is in the Finder's right-click menu, under **Services** (or **Quick Actions**). You can also drop files on AirLynk's Dock icon, or choose **Open With → AirLynk**.
+- AirLynk can keep running in the menu bar after you close the window, so your paired devices can still send to your Mac. You can turn this off in Settings, and **⌘Q** quits it.
+- To uninstall: quit AirLynk and drag it from Applications to the Trash.
+
+### Updates
+
+AirLynk updates itself. It checks for a new version every 6 hours and shows a popup when one is ready, and every update is signed and checked before it's installed. It asks for your password only if your account can't change the Applications folder. Keep AirLynk in Applications: a copy opened straight from the `.dmg` can't update itself. A universal copy updates to the smaller file for your Mac. An update never interrupts a transfer.
 
 ## Install on Linux
 
@@ -104,7 +133,7 @@ AirLynk updates itself. It checks for a new version every 6 hours and shows a po
 - Share a link or a QR code, send to devices on the same Wi-Fi, or to your paired devices
 - Pair your phone and PC once, then send to each other any time
 - Files go directly from device to device, end-to-end encrypted, and are never uploaded to a cloud drive
-- Works with AirLynk for Android: phone to PC and PC to phone
+- Works with AirLynk for Android: phone to computer and computer to phone, on Windows, macOS and Linux
 
 ## Privacy
 
@@ -118,6 +147,6 @@ Read the [privacy policy](https://airlynk.in/privacy-policy). The desktop app ha
 
 ## About this repository
 
-This repository holds AirLynk's release files: the Windows installer, the Linux `.deb` and AppImage, and the signed update file (`latest.json`) the app reads to find new versions. The source code isn't public.
+This repository holds AirLynk's release files: the Windows installer, the Mac `.dmg` files, the Linux `.deb` and AppImage, and the signed update file (`latest.json`) the app reads to find new versions. The source code isn't public.
 
 © 2026 Sathish Aluvala
